@@ -46,3 +46,6 @@ Additionally add bootstrap scripts and styles into angular.json
 
 ## Fixing TSLint styles
 ng lint --fix
+
+## Install icons
+npm i  material-design-icons
