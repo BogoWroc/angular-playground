@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ButtonComponent } from './button/button.component';
 import { DisplayComponent } from './display/display.component';
 import { KeypadComponent } from './keypad/keypad.component';
+import { UnitComponent } from './unit/unit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
     DisplayComponent,
-    KeypadComponent
+    KeypadComponent,
+    UnitComponent
   ],
   imports: [
     BrowserModule,
