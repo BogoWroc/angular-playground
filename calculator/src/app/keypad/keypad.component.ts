@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-keypad',
@@ -7,13 +7,25 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class KeypadComponent implements OnInit {
 
-  @Input() action;
-  constructor() { }
+  @Output() dataEvent = new EventEmitter<string>();
+  private buffer = '';
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  setValue($event: MouseEvent) {
+
+  onKeyPress(key: string) {
+    console.log(key);
+    if (key === '=') {
+      // tslint:disable-next-line:no-eval
+      this.buffer = eval(this.buffer);
+    } else {
+      this.buffer += key;
+    }
+    this.dataEvent.emit(this.buffer);
 
   }
 }

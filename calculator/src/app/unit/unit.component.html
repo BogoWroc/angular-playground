@@ -6,7 +6,7 @@
   </div>
   <div class="row">
     <div class="col">
-      <app-keypad></app-keypad>
+      <app-keypad (dataEvent)="onSelect($event)"></app-keypad>
     </div>
   </div>
 </div>

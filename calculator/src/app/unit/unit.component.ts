@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-unit',
@@ -7,12 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UnitComponent implements OnInit {
 
-  constructor() { }
+  private data = '0';
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
   calculate() {
-    return '-1  ';
+    return this.data;
+  }
+
+  onSelect(data: string) {
+    this.data = data;
   }
 }
