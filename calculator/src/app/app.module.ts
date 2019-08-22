@@ -7,6 +7,8 @@ import { ButtonComponent } from './button/button.component';
 import { DisplayComponent } from './display/display.component';
 import { KeypadComponent } from './keypad/keypad.component';
 import { UnitComponent } from './unit/unit.component';
+import {KeypadService} from './keypad/keypad.service';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import { UnitComponent } from './unit/unit.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [KeypadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

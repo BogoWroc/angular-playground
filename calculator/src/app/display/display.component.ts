@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {KeypadService} from '../keypad/keypad.service';
+
 
 @Component({
   selector: 'app-display',
@@ -6,11 +8,19 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnInit {
-  @Input() value: string;
+  @Input() value = '0';
 
-  constructor() { }
+  constructor(private calcService: KeypadService) {
+  }
 
   ngOnInit() {
+    this.calcService.dataEvent.subscribe((data: string) => {
+      if (data === '') {
+        this.value = '0';
+      } else {
+        this.value = data;
+      }
+    });
   }
 
 }

@@ -1,4 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {KeypadService} from '../keypad/keypad.service';
 
 @Component({
   selector: 'app-button',
@@ -7,16 +8,15 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
   @Input() value: string;
-  @Output() clickEvent = new EventEmitter<string>();
 
-  constructor() {
+  constructor(private calcService: KeypadService) {
   }
 
   ngOnInit() {
   }
 
   onPress(event) {
-    this.clickEvent.emit(this.value);
+    this.calcService.onKeyPress(this.value);
   }
 
 }

@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container calculator">
   <div class="row">
     <div class="col align-content-center">
-      <app-display [value]="calculate()"></app-display>
+      <app-display></app-display>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <app-keypad (dataEvent)="onSelect($event)"></app-keypad>
+      <app-keypad></app-keypad>
     </div>
   </div>
 </div>
