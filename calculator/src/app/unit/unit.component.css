@@ -1,5 +1,5 @@
 .calculator {
-  width: 20%;
+  width: min-content;
   border-style: solid;
   border-width: 1px;
   padding: 1% 1%;
